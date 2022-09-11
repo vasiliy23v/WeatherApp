@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  background: linear-gradient(180deg, #30a2c5 0%, rgba(255, 255, 255, 0) 100%),
+    #00242f no-repeat;
+  height: 100%;
+  min-height: 100vh;
+
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #ffffff;
+}
+
+.input {
+  text-align: center;
+  margin: 30px auto;
+}
+
+.input input[type="text"] {
+  width: 600px;
+  height: 55px;
+  padding: 10px 30px;
+
+  background: none;
+  border: 2px white solid;
+  outline: none;
+  border-radius: 50px;
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.card {
+  max-width: 280px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.card-header-date {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  margin-bottom: 12px;
+}
+.card-header-city {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 49px;
+}
+.card-header-country {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  margin-bottom: 18px;
+}
+
+.card-circle {
+  width: 240px;
+  height: 240px;
+  background: #ffffff;
+  box-shadow: 0px 28px 36px rgba(96, 209, 234, 0.4);
+  border-radius: 50%;
+  font-weight: 300;
+  font-size: 100px;
+  line-height: 122px;
+  margin: 0 auto;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.card-descr {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card-descr > div > div > p {
+  margin-bottom: 8px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+}
+.card-descr > div > div {
+  margin-bottom: 20px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+}
+.close {
+  float: right;
+  margin-top: -2px;
+  cursor: pointer;
+  margin-right: 20px;
+}
