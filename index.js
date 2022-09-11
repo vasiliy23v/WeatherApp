@@ -12,6 +12,7 @@ inputValue.addEventListener('change', function () {
     fetch(url)
         .then(response => response.json())
         .then(data => {
+            const div = document.createElement("div");
             const markup = `
 <div class="card">
             <div class="card-header">
@@ -19,7 +20,7 @@ inputValue.addEventListener('change', function () {
                 <p class="card-header-country">${data.location.country}</p>
             </div>
             <div class="card-circle">
-            ${data.current.temp_c + "°C"}
+            ${Math.ceil(data.current.temp_c) + "°C"}
             </div>
             <div class="card-descr">
                 <div>
@@ -48,7 +49,8 @@ inputValue.addEventListener('change', function () {
 
             console.log(markup)
 
-            container.innerHTML = markup;
+            div.innerHTML = markup;
+            container.appendChild(div);
 
             main.innerHTML = data.current.feelslike_c + "C";
             main.innerHTML = data.current.gust_kph;
