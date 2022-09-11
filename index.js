@@ -1,42 +1,54 @@
 let inputValue = document.querySelector('.input_text')
 
-let country = document.querySelector('.card-header-country')
-let city = document.querySelector('.card-header-city')
-
-let temp = document.querySelector('.card-circle')
-
-let wind = document.querySelector('.card-descr-wind')
-let humidity = document.querySelector('.card-descr-humidity')
-let vis = document.querySelector('.card-descr-vis')
-let press = document.querySelector('.card-descr-press')
-
-
-let clouds = document.querySelector('.clouds');
-let main = document.querySelector('#name');
-
-
+let container = document.querySelector('.container')
 
 
 const apiKey = "9f2e2c132d7f4056bf394247220909";
 
-
+const weatherArray = [];
 inputValue.addEventListener('change', function () {
     console.log("inputValue", inputValue.value)
     const url = `http://api.weatherapi.com/v1/current.json?key=9f2e2c132d7f4056bf394247220909&q=${inputValue.value}&aqi=no`;
     fetch(url)
         .then(response => response.json())
         .then(data => {
-            console.log(data)
+            const markup = `
+<div class="card">
+            <div class="card-header">
+                <h1 class="card-header-city">${data.location.name}</h1>
+                <p class="card-header-country">${data.location.country}</p>
+            </div>
+            <div class="card-circle">
+            ${data.current.temp_c + "°C"}
+            </div>
+            <div class="card-descr">
+                <div>
+                    <div>
+                        <p>Wind status</p>
+                        <span>${data.current.wind_kph + "kmh"}</span>
+                    </div>
+                    <div>
+                        <p>Humidity</p>
+                        <span>${data.current.humidity + "%"}</span>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <p>Visibility</p>
+                        <span>${data.current.vis_km + "km"}</span>
+                    </div>
+                    <div>
+                        <p>Air pressure</p>
+                        <span>${data.current.pressure_in + "in"}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+`
 
-            city.innerHTML = data.location.name;
-            country.innerHTML = data.location.country;
+            console.log(markup)
 
-            temp.innerHTML = data.current.temp_c + "°C";
-
-            wind.innerHTML = data.current.wind_kph + "kmh";
-            humidity.innerHTML = data.current.humidity + "%";
-            vis.innerHTML = data.current.vis_km + "km"
-            press.innerHTML = data.current.pressure_in + "in";
+            container.innerHTML = markup;
 
             main.innerHTML = data.current.feelslike_c + "C";
             main.innerHTML = data.current.gust_kph;
@@ -50,3 +62,4 @@ inputValue.addEventListener('change', function () {
         .catch(err => console.error(err))
 
 })
+
