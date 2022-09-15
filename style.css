@@ -95,13 +95,13 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-.card-descr > div > div > p {
+.card-descr-p > p {
   margin-bottom: 8px;
   font-weight: 700;
   font-size: 14px;
   line-height: 17px;
 }
-.card-descr > div > div {
+.card-descr-p {
   margin-bottom: 20px;
   font-weight: 400;
   font-size: 20px;
